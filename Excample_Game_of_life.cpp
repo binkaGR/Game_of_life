@@ -123,6 +123,7 @@ void Game_of_life(  int x ,int start_x)
 
 void add_element_in_array(string name )
 {
+    string a;
     fstream file;
     file.open (name, std::fstream::in);
     if(file.is_open())
@@ -132,11 +133,25 @@ void add_element_in_array(string name )
         {
             for( int j=0;j<COLLOM;j++)
             {
-            file>>Arr1[i][j];
+                file>>Arr1[i][j];
+                if(Arr1[i][j]==1)
+                {
+                cout<<COLOR_RED;
+                cout<<Arr1[i][j]<<"|";
+                }
+                else
+                {
+                    cout<<COLOR_BLUE;
+                    cout<<Arr1[i][j]<<"|";
+                }
             }
+            cout<<endl;
         }
+        cout<<endl;
     }
     file.close();  
+    cout<<"To start a Game insert Enter"<<endl;
+    cin>>a;
 
 }
 
